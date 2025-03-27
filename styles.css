@@ -1,0 +1,391 @@
+:root {
+    --primary-color: #ffffff; /* White */
+    --secondary-color: #cccccc; /* Light Grey */
+    --text-color: #ffffff; /* White */
+    --bg-color: #1c1c1c; /* Dark Grey */
+    --card-bg: #333333; /* Darker Grey */
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* General Styles */
+body {
+    background: #000000; /* Black */
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Fix header positioning */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #000000; /* Black */
+    padding: 20px 0;
+    color: var(--text-color);
+    text-align: center;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em; /* Increase font size */
+    font-family: 'Orbitron', sans-serif; /* Change font style */
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+header h1:hover {
+    color: var(--secondary-color);
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    background-color: #000000; /* Black */
+    color: var(--text-color);
+    margin-top: 20px;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1em;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Add spacing below header so content doesn’t hide behind it */
+main {
+    padding-top: 80px; /* Adjust based on header height */
+}
+
+/* Make sure all sections align properly */
+section {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Glassmorphic container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+/* About Me Section */
+#about p {
+    font-size: 1.2em; /* Increase font size for About Me */
+    margin: 20px 0;
+}
+
+.random-facts-container {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    margin-top: 20px;
+}
+
+#fact-display {
+    font-size: 1.2em; /* Increase font size for random facts */
+    margin: 20px 0;
+    color: var(--primary-color);
+    font-family: 'Courier New', Courier, monospace; /* Change font to make it more attractive */
+}
+
+/* Skills Section */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+    color: var(--primary-color);
+    flex: 1 1 200px; /* Adjust the width of the skill cards */
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+/* Project List Styles */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+    color: var(--primary-color);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.project-card h3 {
+    margin: 10px 0;
+}
+
+.project-card p {
+    margin: 10px 0;
+}
+
+.project-card .tech-stack {
+    margin: 10px 0;
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+.project-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+/* Certificates Section */
+.certificates-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.certificate {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+    color: var(--primary-color);
+    flex: 1 1 200px; /* Adjust the width of the certificate cards */
+}
+
+.certificate:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+/* Contact Section */
+.contact-name {
+    font-family: 'Poppins', sans-serif; /* Change font to make it more attractive */
+    font-size: 1.5em;
+    color: var(--primary-color);
+}
+
+.role {
+    font-family: 'Poppins', sans-serif; /* Change font to make it more attractive */
+    font-size: 1.5em;
+    color: var(--secondary-color);
+    margin-top: -10px; /* Remove space between Aarthi Ravi and TECH ENTHUSIAST */
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: var(--transition);
+    border-bottom: 1px dotted var(--secondary-color); /* Add dotted line */
+    padding-bottom: 5px;
+}
+
+.contact-info a:hover {
+    color: var(--secondary-color);
+}
+
+/* Contact Form Styles */
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--text-color);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+form button {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+form button:hover {
+    background-color: #555; /* Slightly lighter grey */
+}
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+#profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.01); /* Light overlay to prevent screenshots */
+    pointer-events: none;
+}
+
+/* Profile image */
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Contact info */
+.contact-info a {
+    display: block;
+    margin: 10px 0;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.contact-info a:hover {
+    color: var(--secondary-color);
+}
+
+/* Make navigation buttons responsive */
+.nav-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.nav-icons button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-icons button:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.nav-icons .active {
+    background: var(--secondary-color);
+    color: black;
+}
+
+
